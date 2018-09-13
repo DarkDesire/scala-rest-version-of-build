@@ -19,7 +19,9 @@ object WebServerApp extends App {
 
   val bindingFuture = Http().bindAndHandle(route, "localhost", 8080)
 
-  println(s"Server online at http://localhost:8080/\nPress RETURN to stop...")
+  print("Server online at http://localhost:8080/\n"+
+    "Version of build here: http://localhost:8080/version\n"+
+    "Press RETURN to stop...")
   StdIn.readLine() // let it run until user presses return
   bindingFuture
     .flatMap(_.unbind()) // trigger unbinding from the port
