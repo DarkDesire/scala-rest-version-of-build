@@ -9,5 +9,5 @@ object ProjectInfo {
   val buildTime: String = dateTimeFormat.format(new Date)
   val commitFull: String = "git rev-parse HEAD".!!.trim
   val commitShort: String = "git rev-parse --short HEAD".!!.trim
-  val commitMsg: String = "git log -1 --pretty=%B".!!
+  val commitMsg: String = "git log -1 --pretty=%B".!!.trim
 }
